@@ -4,7 +4,7 @@
 //HPbarGreen‚ğŠÇ—‚·‚éƒNƒ‰ƒX
 class HPbarGreen : public GameObject
 {
-	int hModel_;    //ƒ‚ƒfƒ‹”Ô†
+	int hPict_;    //‰æ‘œ”Ô†
 	float InitHP_;	//“G‰ŠúHP
 	float HP_;		//“GHP
 public:

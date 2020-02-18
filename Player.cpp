@@ -1,15 +1,16 @@
-//エンジン
-#include "Engine/Input.h"
-#include "Engine/Model.h"
-#include "Engine/SceneManager.h"
 //親クラス
 #include "Player.h"
 //子クラス
 #include "PlBullet.h"
-//その他
+//相互
 #include "Enemy.h"
 #include "EnemyNormalBulletLeft.h"
 #include "EnemyNormalBulletRight.h"
+//エンジン・その他
+#include "Engine/Input.h"
+#include "Engine/Model.h"
+#include "Engine/SceneManager.h"
+
 
 //コンストラクタ
 Player::Player(GameObject * parent)
@@ -37,12 +38,6 @@ void Player::Initialize()
 //更新
 void Player::Update()
 {
-	//回転
-	if(Form_ == true)
-		transform_.rotate_.vecY += 6.0f;
-	else 
-		transform_.rotate_.vecY -= 6.0f;
-
 	//弾未生成時、Zキーを押したら弾生成
 	if (Input::IsKey(DIK_Z) && BulletFlg_ == false)
 	{

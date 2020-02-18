@@ -1,5 +1,5 @@
 //エンジン
-#include "Engine/Model.h"
+#include "Engine/Image.h"
 //親クラス
 #include "HPbarGreen.h"
 //子クラス
@@ -8,7 +8,7 @@
 
 //コンストラクタ
 HPbarGreen::HPbarGreen(GameObject * parent)
-	:GameObject(parent, "HPbarGreen"), hModel_(-1), InitHP_(((Enemy*)FindObject("Enemy"))->GetHP_())
+	:GameObject(parent, "HPbarGreen"), hPict_(-1), InitHP_(((Enemy*)FindObject("Enemy"))->GetHP_())
 {
 }
 
@@ -20,9 +20,9 @@ HPbarGreen::~HPbarGreen()
 //初期化
 void HPbarGreen::Initialize()
 {
-	//モデルデータのロード
-	hModel_ = Model::Load("HPbarGreen.fbx");
-	assert(hModel_ >= 0);
+	//画像データのロード
+	hPict_ = Image::Load("GreenHPBae.png");
+	assert(hPict_ >= 0);
 
 	//初期位置
 	transform_.position_.vecY = 4.0f;
@@ -46,8 +46,8 @@ void HPbarGreen::Update()
 //描画
 void HPbarGreen::Draw()
 {
-	Model::SetTransform(hModel_, transform_);
-	Model::Draw(hModel_);
+	Image::SetTransform(hPict_, transform_);
+	Image::Draw(hPict_);
 }
 
 //開放

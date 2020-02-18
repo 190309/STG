@@ -5,6 +5,7 @@
 //エンジン・その他
 #include "Engine/GameObject.h"
 
+
 //クリアシーンを管理するクラス
 class ClearScene : public GameObject
 {

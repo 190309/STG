@@ -7,6 +7,7 @@
 #include "Engine/Image.h"
 #include "Engine/SceneManager.h"
 
+
 //コンストラクタ
 StartScene::StartScene(GameObject * parent)
 	: GameObject(parent, "StartScene"), hPict_(-1)

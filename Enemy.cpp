@@ -229,7 +229,7 @@ void Enemy::OnCollision(GameObject * pTarget)
 	//’e‚É“–‚½‚Á‚½‚Æ‚«‚Ìˆ—
 	if(pTarget->GetObjectName() == "PlBullet")
 	{
-		HP_ -= ((PlBullet*)pTarget)->GetBulletSize_() / 60.00f;
+		HP_ -= ((PlBullet*)pTarget)->GetBulletSize() / 60.00f;
 		//“–‚Ä‚½’e‚àŽE‚·
 		pTarget->KillMe();
 	}

@@ -4,7 +4,7 @@
 //HPbarRedを管理するクラス
 class HPbarRed : public GameObject
 {
-	int hModel_;    //モデル番号
+	int hPict_;    //画像番号
 public:
 	//コンストラクタ
 	HPbarRed(GameObject* parent);

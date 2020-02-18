@@ -38,9 +38,6 @@
     <Filter Include="03Scene\05TestScene">
       <UniqueIdentifier>{19443680-256d-4e09-bcb7-b593a50ba45c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03Scene\02MainGameScene\Any">
-      <UniqueIdentifier>{42fc36e7-c61b-4179-8254-323699351f72}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03Scene\02MainGameScene\Enemy">
       <UniqueIdentifier>{173dbdcf-a4bc-42dc-8544-bea95f1890b0}</UniqueIdentifier>
     </Filter>
@@ -49,6 +46,15 @@
     </Filter>
     <Filter Include="03Scene\02MainGameScene\Scene">
       <UniqueIdentifier>{5ff2f182-7019-4534-8ce6-9d2429f8984e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03Scene\02MainGameScene\Enemy\EnemyBody">
+      <UniqueIdentifier>{90b5e212-3bb3-4e6f-b045-9e49095c8a13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03Scene\02MainGameScene\Enemy\EnemyBullet">
+      <UniqueIdentifier>{ecb5d525-0de4-4f55-bee8-3e0e998194cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03Scene\02MainGameScene\Enemy\EnemyHPBar">
+      <UniqueIdentifier>{f4a46d1c-d1e4-4315-805c-4d5e95ecc378}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -112,15 +118,6 @@
     <ClCompile Include="Engine\Transform.cpp">
       <Filter>01Engine\GameObject</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>03Scene\02MainGameScene\Enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="HPbarGreen.cpp">
-      <Filter>03Scene\02MainGameScene\Any</Filter>
-    </ClCompile>
-    <ClCompile Include="HPbarRed.cpp">
-      <Filter>03Scene\02MainGameScene\Any</Filter>
-    </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>03Scene\02MainGameScene\Player</Filter>
     </ClCompile>
@@ -129,12 +126,6 @@
     </ClCompile>
     <ClCompile Include="PlBullet.cpp">
       <Filter>03Scene\02MainGameScene\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="EnemyNormalBulletLeft.cpp">
-      <Filter>03Scene\02MainGameScene\Enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="EnemyNormalBulletRight.cpp">
-      <Filter>03Scene\02MainGameScene\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="StartScene.cpp">
       <Filter>03Scene\01StartScene</Filter>
@@ -147,6 +138,21 @@
     </ClCompile>
     <ClCompile Include="TestScene.cpp">
       <Filter>03Scene\05TestScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>03Scene\02MainGameScene\Enemy\EnemyBody</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyNormalBulletLeft.cpp">
+      <Filter>03Scene\02MainGameScene\Enemy\EnemyBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyNormalBulletRight.cpp">
+      <Filter>03Scene\02MainGameScene\Enemy\EnemyBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="HPbarGreen.cpp">
+      <Filter>03Scene\02MainGameScene\Enemy\EnemyHPBar</Filter>
+    </ClCompile>
+    <ClCompile Include="HPbarRed.cpp">
+      <Filter>03Scene\02MainGameScene\Enemy\EnemyHPBar</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -210,15 +216,6 @@
     <ClInclude Include="Engine\Transform.h">
       <Filter>01Engine\GameObject</Filter>
     </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>03Scene\02MainGameScene\Enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="HPbarRed.h">
-      <Filter>03Scene\02MainGameScene\Any</Filter>
-    </ClInclude>
-    <ClInclude Include="HPbarGreen.h">
-      <Filter>03Scene\02MainGameScene\Any</Filter>
-    </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>03Scene\02MainGameScene\Player</Filter>
     </ClInclude>
@@ -227,12 +224,6 @@
     </ClInclude>
     <ClInclude Include="PlBullet.h">
       <Filter>03Scene\02MainGameScene\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="EnemyNormalBulletLeft.h">
-      <Filter>03Scene\02MainGameScene\Enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="EnemyNormalBulletRight.h">
-      <Filter>03Scene\02MainGameScene\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="StartScene.h">
       <Filter>03Scene\01StartScene</Filter>
@@ -245,6 +236,21 @@
     </ClInclude>
     <ClInclude Include="TestScene.h">
       <Filter>03Scene\05TestScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>03Scene\02MainGameScene\Enemy\EnemyBody</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyNormalBulletLeft.h">
+      <Filter>03Scene\02MainGameScene\Enemy\EnemyBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyNormalBulletRight.h">
+      <Filter>03Scene\02MainGameScene\Enemy\EnemyBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="HPbarGreen.h">
+      <Filter>03Scene\02MainGameScene\Enemy\EnemyHPBar</Filter>
+    </ClInclude>
+    <ClInclude Include="HPbarRed.h">
+      <Filter>03Scene\02MainGameScene\Enemy\EnemyHPBar</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

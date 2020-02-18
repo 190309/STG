@@ -1,12 +1,11 @@
-//エンジン
 //親クラス
 #include "PlayScene.h"
 //子クラス
 #include "Player.h"
 #include "Enemy.h"
-#include "HPbarRed.h"
-#include "HPbarGreen.h"
-//その他
+//相互
+//エンジン・その他
+
 
 //コンストラクタ
 PlayScene::PlayScene(GameObject * parent)
@@ -18,9 +17,7 @@ PlayScene::PlayScene(GameObject * parent)
 void PlayScene::Initialize()
 {
 	Instantiate<Player>(this);
-	Instantiate<Enemy>(this);
-	Instantiate<HPbarRed>(this);
-	Instantiate<HPbarGreen>(this);
+//	Instantiate<Enemy>(this);
 }
 
 //更新

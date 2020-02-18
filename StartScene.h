@@ -5,6 +5,7 @@
 //エンジン・その他
 #include "Engine/GameObject.h"
 
+
 //スタートシーンを管理するクラス
 class StartScene : public GameObject
 {
