@@ -1,11 +1,12 @@
-//エンジン
-#include "Engine/Image.h"
-#include "Engine/Input.h"
-#include "Engine/SceneManager.h"
 //親クラス
 #include "ClearScene.h"
 //子クラス
-//その他
+//相互
+//エンジン・その他
+#include "Engine/Image.h"
+#include "Engine/Input.h"
+#include "Engine/SceneManager.h"
+
 
 //コンストラクタ
 ClearScene::ClearScene(GameObject * parent)

@@ -1,6 +1,8 @@
 //親クラス
 #include "PlBullet.h"
+#include "Player.h"
 //子クラス
+//相互
 //エンジン・その他のクラス
 #include "Engine/Input.h"
 #include "Engine/Model.h"

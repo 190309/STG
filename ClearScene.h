@@ -1,4 +1,8 @@
 #pragma once
+//親クラス
+//子クラス
+//相互
+//エンジン・その他
 #include "Engine/GameObject.h"
 
 //クリアシーンを管理するクラス

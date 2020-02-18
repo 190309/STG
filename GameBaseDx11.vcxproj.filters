@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="リソース ファイル">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="01Engine">
       <UniqueIdentifier>{e5fccdcb-f299-4448-bdb6-01fa28039576}</UniqueIdentifier>
     </Filter>
@@ -24,31 +20,34 @@
       <UniqueIdentifier>{47a6a3f5-8cfd-436b-8d58-beccd108f3f3}</UniqueIdentifier>
       <Extensions>hlsl</Extensions>
     </Filter>
-    <Filter Include="リソース ファイル\01StartScene">
+    <Filter Include="03Scene">
+      <UniqueIdentifier>{e6e06766-fe3e-4bb9-8931-f75931160e1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03Scene\01StartScene">
       <UniqueIdentifier>{e1010e37-5f8e-4a85-845b-469244c0f128}</UniqueIdentifier>
     </Filter>
-    <Filter Include="リソース ファイル\05TestScene">
-      <UniqueIdentifier>{19443680-256d-4e09-bcb7-b593a50ba45c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="リソース ファイル\04GameOverScene">
-      <UniqueIdentifier>{48cc014a-b3d3-4632-9260-111284d27458}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="リソース ファイル\03GameClearScene">
-      <UniqueIdentifier>{c77cba2a-c4bc-4b0a-acdc-dc944c9990b5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="リソース ファイル\02MainGameScene">
+    <Filter Include="03Scene\02MainGameScene">
       <UniqueIdentifier>{34932518-cce5-4300-be04-270f709200dd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="リソース ファイル\02MainGameScene\Player">
-      <UniqueIdentifier>{128cc9a7-28ba-476f-9926-e2b2b576a144}</UniqueIdentifier>
+    <Filter Include="03Scene\03GameClearScene">
+      <UniqueIdentifier>{c77cba2a-c4bc-4b0a-acdc-dc944c9990b5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="リソース ファイル\02MainGameScene\Enemy">
-      <UniqueIdentifier>{173dbdcf-a4bc-42dc-8544-bea95f1890b0}</UniqueIdentifier>
+    <Filter Include="03Scene\04GameOverScene">
+      <UniqueIdentifier>{48cc014a-b3d3-4632-9260-111284d27458}</UniqueIdentifier>
     </Filter>
-    <Filter Include="リソース ファイル\02MainGameScene\Any">
+    <Filter Include="03Scene\05TestScene">
+      <UniqueIdentifier>{19443680-256d-4e09-bcb7-b593a50ba45c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03Scene\02MainGameScene\Any">
       <UniqueIdentifier>{42fc36e7-c61b-4179-8254-323699351f72}</UniqueIdentifier>
     </Filter>
-    <Filter Include="リソース ファイル\02MainGameScene\Scene">
+    <Filter Include="03Scene\02MainGameScene\Enemy">
+      <UniqueIdentifier>{173dbdcf-a4bc-42dc-8544-bea95f1890b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03Scene\02MainGameScene\Player">
+      <UniqueIdentifier>{128cc9a7-28ba-476f-9926-e2b2b576a144}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03Scene\02MainGameScene\Scene">
       <UniqueIdentifier>{5ff2f182-7019-4534-8ce6-9d2429f8984e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -113,41 +112,41 @@
     <ClCompile Include="Engine\Transform.cpp">
       <Filter>01Engine\GameObject</Filter>
     </ClCompile>
-    <ClCompile Include="ClearScene.cpp">
-      <Filter>リソース ファイル\03GameClearScene</Filter>
-    </ClCompile>
     <ClCompile Include="Enemy.cpp">
-      <Filter>リソース ファイル\02MainGameScene\Enemy</Filter>
+      <Filter>03Scene\02MainGameScene\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="HPbarGreen.cpp">
-      <Filter>リソース ファイル\02MainGameScene\Any</Filter>
+      <Filter>03Scene\02MainGameScene\Any</Filter>
     </ClCompile>
     <ClCompile Include="HPbarRed.cpp">
-      <Filter>リソース ファイル\02MainGameScene\Any</Filter>
+      <Filter>03Scene\02MainGameScene\Any</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>リソース ファイル\02MainGameScene\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="StartScene.cpp">
-      <Filter>リソース ファイル\01StartScene</Filter>
-    </ClCompile>
-    <ClCompile Include="TestScene.cpp">
-      <Filter>リソース ファイル\05TestScene</Filter>
+      <Filter>03Scene\02MainGameScene\Player</Filter>
     </ClCompile>
     <ClCompile Include="PlayScene.cpp">
-      <Filter>リソース ファイル\02MainGameScene\Scene</Filter>
+      <Filter>03Scene\02MainGameScene\Scene</Filter>
     </ClCompile>
     <ClCompile Include="PlBullet.cpp">
-      <Filter>リソース ファイル\02MainGameScene\Player</Filter>
+      <Filter>03Scene\02MainGameScene\Player</Filter>
     </ClCompile>
     <ClCompile Include="EnemyNormalBulletLeft.cpp">
-      <Filter>リソース ファイル\02MainGameScene\Enemy</Filter>
+      <Filter>03Scene\02MainGameScene\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="EnemyNormalBulletRight.cpp">
-      <Filter>リソース ファイル\02MainGameScene\Enemy</Filter>
+      <Filter>03Scene\02MainGameScene\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="StartScene.cpp">
+      <Filter>03Scene\01StartScene</Filter>
+    </ClCompile>
+    <ClCompile Include="ClearScene.cpp">
+      <Filter>03Scene\03GameClearScene</Filter>
     </ClCompile>
     <ClCompile Include="GameOverScene.cpp">
-      <Filter>リソース ファイル\04GameOverScene</Filter>
+      <Filter>03Scene\04GameOverScene</Filter>
+    </ClCompile>
+    <ClCompile Include="TestScene.cpp">
+      <Filter>03Scene\05TestScene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -211,41 +210,41 @@
     <ClInclude Include="Engine\Transform.h">
       <Filter>01Engine\GameObject</Filter>
     </ClInclude>
-    <ClInclude Include="ClearScene.h">
-      <Filter>リソース ファイル\03GameClearScene</Filter>
-    </ClInclude>
     <ClInclude Include="Enemy.h">
-      <Filter>リソース ファイル\02MainGameScene\Enemy</Filter>
+      <Filter>03Scene\02MainGameScene\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="HPbarRed.h">
-      <Filter>リソース ファイル\02MainGameScene\Any</Filter>
+      <Filter>03Scene\02MainGameScene\Any</Filter>
     </ClInclude>
     <ClInclude Include="HPbarGreen.h">
-      <Filter>リソース ファイル\02MainGameScene\Any</Filter>
+      <Filter>03Scene\02MainGameScene\Any</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>リソース ファイル\02MainGameScene\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="StartScene.h">
-      <Filter>リソース ファイル\01StartScene</Filter>
-    </ClInclude>
-    <ClInclude Include="TestScene.h">
-      <Filter>リソース ファイル\05TestScene</Filter>
+      <Filter>03Scene\02MainGameScene\Player</Filter>
     </ClInclude>
     <ClInclude Include="PlayScene.h">
-      <Filter>リソース ファイル\02MainGameScene\Scene</Filter>
+      <Filter>03Scene\02MainGameScene\Scene</Filter>
     </ClInclude>
     <ClInclude Include="PlBullet.h">
-      <Filter>リソース ファイル\02MainGameScene\Player</Filter>
+      <Filter>03Scene\02MainGameScene\Player</Filter>
     </ClInclude>
     <ClInclude Include="EnemyNormalBulletLeft.h">
-      <Filter>リソース ファイル\02MainGameScene\Enemy</Filter>
+      <Filter>03Scene\02MainGameScene\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="EnemyNormalBulletRight.h">
-      <Filter>リソース ファイル\02MainGameScene\Enemy</Filter>
+      <Filter>03Scene\02MainGameScene\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="StartScene.h">
+      <Filter>03Scene\01StartScene</Filter>
+    </ClInclude>
+    <ClInclude Include="ClearScene.h">
+      <Filter>03Scene\03GameClearScene</Filter>
     </ClInclude>
     <ClInclude Include="GameOverScene.h">
-      <Filter>リソース ファイル\04GameOverScene</Filter>
+      <Filter>03Scene\04GameOverScene</Filter>
+    </ClInclude>
+    <ClInclude Include="TestScene.h">
+      <Filter>03Scene\05TestScene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
