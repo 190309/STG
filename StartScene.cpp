@@ -1,25 +1,22 @@
 //親クラス
 #include "StartScene.h"
 //子クラス
+#include "StartLogo.h"
 //相互
 //エンジン・その他
 #include "Engine/Input.h"
-#include "Engine/Image.h"
 #include "Engine/SceneManager.h"
-
 
 //コンストラクタ
 StartScene::StartScene(GameObject * parent)
-	: GameObject(parent, "StartScene"), hPict_(-1)
+	: GameObject(parent, "StartScene")
 {
 }
 
 //初期化
 void StartScene::Initialize()
 {
-	//画像データのロード
-	hPict_ = Image::Load("StartLogo.png");
-	assert(hPict_ >= 0);
+	Instantiate<StartLogo>(this);
 }
 
 //更新
@@ -31,14 +28,11 @@ void StartScene::Update()
 		SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
 		pSceneManager->ChangeScene(SCENE_ID_PLAY);
 	}
-
 }
 
 //描画
 void StartScene::Draw()
 {
-	Image::SetTransform(hPict_, transform_);
-	Image::Draw(hPict_);
 }
 
 //開放

@@ -10,10 +10,8 @@
 //ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 PlBullet::PlBullet(GameObject * parent)
 	:GameObject(parent, "PlBullet"),
-	POS(XMVectorSet(0.0f, 0.0f, 3.0f, 0.0f)), CENTER(XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f)), MOVE(XMVectorSet(0.0f, 0.0f, 0.6f, 0.0f)),
-	Scale(XMVectorSet(Size / AJUST_SIZE, Size / AJUST_SIZE, Size / AJUST_SIZE, Size / AJUST_SIZE)),
-	AJUST_COLL(72), MAX_SIZE(180), AJUST_SIZE(120.0f), MAX_RANGE(100.0f),
-	hModel_(-1), Size(20), Flg(false), pPlayer((Player*)FindObject("Player"))
+	MAX_SIZE(180), AJUST_COLL(60.0f), AJUST_SIZE(120.0f), MAX_RANGE(100.0f), MOVE(0.6f), POS(3.0f),
+	Flg_(false), hModel_(-1), Size_(20), pPlayer_((Player*)FindObject("Player"))
 {
 }
 
@@ -34,37 +32,37 @@ void PlBullet::Initialize()
 void PlBullet::Update()
 {
 	//’e–¢”­ŽËŽžAZƒL[‚ð‰Ÿ‚µ‚Ä‚¢‚éŠÔ’e‚ðŠg‘å‚¨‚æ‚ÑˆÚ“®
-	if (Input::IsKey(DIK_Z) && Flg == false)
+	if (Input::IsKey(DIK_Z) && Flg_ == false)
 	{
 		//’e‚ÌˆÊ’u
-		transform_.position_ = pPlayer->GetPosition() + POS;
+		transform_.position_ = pPlayer_->GetPosition();
+		transform_.position_.vecZ += POS;
 
 		//’e‚ÌŠg‘å
-		if (Size < MAX_SIZE)
+		if (Size_ < MAX_SIZE)
 		{
-			Size++;
-			Scale = XMVectorSet(Size / AJUST_SIZE, Size / AJUST_SIZE, Size / AJUST_SIZE, Size / AJUST_SIZE);
-			transform_.scale_ = Scale;
+			Size_++;
+			transform_.scale_ = XMVectorSet(Size_ / AJUST_SIZE, Size_ / AJUST_SIZE, Size_ / AJUST_SIZE, Size_ / AJUST_SIZE);
 		}
 	}
 
 	//’e–¢”­ŽËŽžAZƒL[‚ð—£‚µ‚½‚çƒtƒ‰ƒO•ÏX
-	if (Input::IsKeyUp(DIK_Z) && Flg == false)
+	if (Input::IsKeyUp(DIK_Z) && Flg_ == false)
 	{
-		Flg = true;
+		Flg_ = true;
 		//“–‚½‚è”»’è¶¬
-		SphereCollider* collision = new SphereCollider(CENTER, Size / AJUST_COLL);
+		SphereCollider* collision = new SphereCollider(XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f), Size_ / AJUST_COLL);
 		AddCollider(collision);
 	}
 
 	//’e‚ÌˆÚ“®
-	if (Flg == true)
+	if (Flg_ == true)
 	{
-		transform_.position_ += MOVE;
+		transform_.position_.vecZ += MOVE;
 	}
 
 	//’e‚Ì—LŒø”ÍˆÍ
-	if (transform_.position_.vecZ < MAX_RANGE)
+	if (transform_.position_.vecZ > MAX_RANGE)
 	{
 		KillMe();
 	}

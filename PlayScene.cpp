@@ -6,7 +6,6 @@
 //相互
 //エンジン・その他
 
-
 //コンストラクタ
 PlayScene::PlayScene(GameObject * parent)
 	: GameObject(parent, "PlayScene")

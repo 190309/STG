@@ -1,25 +1,22 @@
 //親クラス
 #include "GameOverScene.h"
 //子クラス
+#include "OverLogo.h"
 //相互
 //エンジン・その他
-#include "Engine/Image.h"
 #include "Engine/Input.h"
 #include "Engine/SceneManager.h"
 
-
 //コンストラクタ
 GameOverScene::GameOverScene(GameObject * parent)
-	: GameObject(parent, "GameOverScene"), hPict_(-1)
+	: GameObject(parent, "GameOverScene")
 {
 }
 
 //初期化
 void GameOverScene::Initialize()
 {
-	//画像データのロード
-	hPict_ = Image::Load("ClearLogo.png");
-	assert(hPict_ >= 0);
+	Instantiate<OverLogo>(this);
 }
 
 //更新
@@ -31,14 +28,11 @@ void GameOverScene::Update()
 		SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
 		pSceneManager->ChangeScene(SCENE_ID_START);
 	}
-
 }
 
 //描画
 void GameOverScene::Draw()
 {
-	Image::SetTransform(hPict_, transform_);
-	Image::Draw(hPict_);
 }
 
 //開放

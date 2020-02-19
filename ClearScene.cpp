@@ -1,25 +1,22 @@
 //親クラス
 #include "ClearScene.h"
 //子クラス
+#include "ClearLogo.h"
 //相互
 //エンジン・その他
-#include "Engine/Image.h"
 #include "Engine/Input.h"
 #include "Engine/SceneManager.h"
 
-
 //コンストラクタ
 ClearScene::ClearScene(GameObject * parent)
-	: GameObject(parent, "ClearScene"), hPict_(-1)
+	: GameObject(parent, "ClearScene")
 {
 }
 
 //初期化
 void ClearScene::Initialize()
 {
-	//画像データのロード
-	hPict_ = Image::Load("ClearLogo.png");
-	assert(hPict_ >= 0);
+	Instantiate<ClearLogo>(this);
 }
 
 //更新
@@ -31,14 +28,11 @@ void ClearScene::Update()
 		SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
 		pSceneManager->ChangeScene(SCENE_ID_START);
 	}
-
 }
 
 //描画
 void ClearScene::Draw()
 {
-	Image::SetTransform(hPict_, transform_);
-	Image::Draw(hPict_);
 }
 
 //開放

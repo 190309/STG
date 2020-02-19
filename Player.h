@@ -1,13 +1,28 @@
 #pragma once
+//親クラス
+//子クラス
+//相互
+//エンジン・その他
 #include "Engine/GameObject.h"
 
 //自機を管理するクラス
 class Player : public GameObject
 {
-	int hModel_;			//モデル番号
-	int HP_;				//自機体力
-	bool Form_;				//自機の回転方向
-	bool BulletFlg_;		//弾の生成フラグ(0:未生成 / 1:生成済み)
+private:
+	//ベクトル(定数)
+	const XMVECTOR RANGE;		//行動可能範囲		(-6.0f < X < 6.0f, -2.75f < Y < 2.75f, Z:0.0f)
+
+	//ベクトル(変数)
+
+	//定数
+	const float MOVE;			//自機の移動		(0.1f)
+	const float COLL_SIZE;		//自機の当たり判定	(1.8f)
+
+	//変数
+	bool BulletFlg_;			//弾の生成フラグ	(0:未生成 / 1:生成済み)
+	int hModel_;				//モデル番号		(-1:エラー / 0:正常読み込み)
+	int HP_;					//自機体力			(-1 < HP_ < 11)
+
 public:
 	//コンストラクタ
 	Player(GameObject* parent);
@@ -27,11 +42,10 @@ public:
 	//開放
 	void Release() override;
 
-	//ゲッター(posX)
-	float GetPosX();
-
-	//ゲッター(posY)
-	float GetPosY();
+	//引数:なし
+	//戻値:transform_.position_
+	//プレイヤーのポジションを返す
+	XMVECTOR GetPlayerPos() { return transform_.position_; };
 
 	//何かに当たった
 	//引数：pTarget 当たった相手

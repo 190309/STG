@@ -4,6 +4,7 @@
 //敵を管理するクラス
 class Enemy : public GameObject
 {
+	XMVECTOR pos;
 	GameObject * pTarget;
 	int hModel_;		//モデル番号
 	int AtcCnt_;		//行動タイミング

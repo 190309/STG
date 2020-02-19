@@ -125,8 +125,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ClearLogo.cpp" />
     <ClCompile Include="EnemyNormalBulletLeft.cpp" />
     <ClCompile Include="GameOverScene.cpp" />
+    <ClCompile Include="OverLogo.cpp" />
     <ClCompile Include="PlBullet.cpp" />
     <ClCompile Include="ClearScene.cpp" />
     <ClCompile Include="Enemy.cpp" />
@@ -155,12 +157,15 @@
     <ClCompile Include="HPbarRed.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayScene.cpp" />
+    <ClCompile Include="StartLogo.cpp" />
     <ClCompile Include="StartScene.cpp" />
     <ClCompile Include="TestScene.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ClearLogo.h" />
     <ClInclude Include="EnemyNormalBulletLeft.h" />
     <ClInclude Include="GameOverScene.h" />
+    <ClInclude Include="OverLogo.h" />
     <ClInclude Include="PlBullet.h" />
     <ClInclude Include="ClearScene.h" />
     <ClInclude Include="Enemy.h" />
@@ -189,6 +194,7 @@
     <ClInclude Include="HPbarRed.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayScene.h" />
+    <ClInclude Include="StartLogo.h" />
     <ClInclude Include="StartScene.h" />
     <ClInclude Include="TestScene.h" />
   </ItemGroup>

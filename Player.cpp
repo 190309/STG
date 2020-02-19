@@ -11,10 +11,12 @@
 #include "Engine/Model.h"
 #include "Engine/SceneManager.h"
 
-
 //コンストラクタ
 Player::Player(GameObject * parent)
-	:GameObject(parent, "Player"), hModel_(-1), HP_(10), Form_(false), BulletFlg_(false)
+	:GameObject(parent, "Player"),
+	RANGE(XMVectorSet(6.0f, 2.75f, 0.0f, 0.0f)),
+	MOVE(0.1f), COLL_SIZE(1.8f),
+	hModel_(-1), HP_(10), BulletFlg_(false)
 {
 }
 
@@ -31,7 +33,7 @@ void Player::Initialize()
 	assert(hModel_ >= 0);
 
 	//当たり判定生成
-	SphereCollider* collision = new SphereCollider(XMVectorSet(0, 0, 0, 0), 1.8f);
+	SphereCollider* collision = new SphereCollider(XMVectorSet(0, 0, 0, 0), COLL_SIZE);
 	AddCollider(collision);
 }
 
@@ -56,9 +58,9 @@ void Player::Update()
 	if (Input::IsKey(DIK_UP))
 	{
 		//移動可能
-		if (transform_.position_.vecY < 2.75f)
+		if (transform_.position_.vecY < RANGE.vecY)
 		{
-			transform_.position_.vecY += 0.1f;
+			transform_.position_.vecY += MOVE;
 		}
 	}
 
@@ -66,9 +68,9 @@ void Player::Update()
 	if (Input::IsKey(DIK_DOWN))
 	{
 		//移動可能
-		if (transform_.position_.vecY > -2.75f)
+		if (transform_.position_.vecY > -RANGE.vecY)
 		{
-			transform_.position_.vecY -= 0.1f;
+			transform_.position_.vecY -= MOVE;
 		}
 	}
 
@@ -76,26 +78,24 @@ void Player::Update()
 	if(Input::IsKey(DIK_RIGHT))
 	{
 		//移動可能
-		if (transform_.position_.vecX < 6)
+		if (transform_.position_.vecX < RANGE.vecX)
 		{
-			transform_.position_.vecX += 0.1f;
+			transform_.position_.vecX += MOVE;
 		}
-		Form_ = 0;
 	}
 
 	//左キー入力で左へ移動
 	if (Input::IsKey(DIK_LEFT))
 	{
 		//移動可能
-		if (transform_.position_.vecX > -6)
+		if (transform_.position_.vecX > -RANGE.vecX)
 		{
-			transform_.position_.vecX -= 0.1f;
+			transform_.position_.vecX -= MOVE;
 		}
-		Form_ = 1;
 	}
 
 	//HPがない
-	if (HP_ <= 0)
+	if (HP_ < 1)
 	{
 		SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
 		pSceneManager->ChangeScene(SCENE_ID_GAMEOVER);
@@ -112,18 +112,6 @@ void Player::Draw()
 //開放
 void Player::Release()
 {
-}
-
-//ゲッター(posX)
-float Player::GetPosX()
-{
-	return transform_.position_.vecX;
-}
-
-//ゲッター(posY)
-float Player::GetPosY()
-{
-	return transform_.position_.vecY;
 }
 
 //何かに当たった

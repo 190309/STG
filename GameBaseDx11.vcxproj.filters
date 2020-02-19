@@ -56,6 +56,27 @@
     <Filter Include="03Scene\02MainGameScene\Enemy\EnemyHPBar">
       <UniqueIdentifier>{f4a46d1c-d1e4-4315-805c-4d5e95ecc378}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03Scene\01StartScene\Scene">
+      <UniqueIdentifier>{febf94cc-3da1-4fcd-ba1f-bd89ac79a883}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03Scene\01StartScene\StartLogo">
+      <UniqueIdentifier>{48736781-0891-4830-9614-dc8819c92cc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03Scene\03GameClearScene\Scene">
+      <UniqueIdentifier>{e355389f-3a68-43c4-94c1-212ea2332a5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03Scene\03GameClearScene\ClearLogo">
+      <UniqueIdentifier>{faefea8a-46b3-43cd-bc91-6856bb5a0f28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03Scene\04GameOverScene\Scene">
+      <UniqueIdentifier>{9345c251-d9e7-4834-bb07-5a4f1e3d54f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03Scene\04GameOverScene\OverLogo">
+      <UniqueIdentifier>{0f347455-da8d-41de-8f39-f1c4e636b9c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03Scene\02MainGameScene\Player\PlayerBullet">
+      <UniqueIdentifier>{18a81245-7ae8-4df7-b239-d291c79f95cb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine\BoxCollider.cpp">
@@ -124,18 +145,6 @@
     <ClCompile Include="PlayScene.cpp">
       <Filter>03Scene\02MainGameScene\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="PlBullet.cpp">
-      <Filter>03Scene\02MainGameScene\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="StartScene.cpp">
-      <Filter>03Scene\01StartScene</Filter>
-    </ClCompile>
-    <ClCompile Include="ClearScene.cpp">
-      <Filter>03Scene\03GameClearScene</Filter>
-    </ClCompile>
-    <ClCompile Include="GameOverScene.cpp">
-      <Filter>03Scene\04GameOverScene</Filter>
-    </ClCompile>
     <ClCompile Include="TestScene.cpp">
       <Filter>03Scene\05TestScene</Filter>
     </ClCompile>
@@ -153,6 +162,27 @@
     </ClCompile>
     <ClCompile Include="HPbarRed.cpp">
       <Filter>03Scene\02MainGameScene\Enemy\EnemyHPBar</Filter>
+    </ClCompile>
+    <ClCompile Include="StartScene.cpp">
+      <Filter>03Scene\01StartScene\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="StartLogo.cpp">
+      <Filter>03Scene\01StartScene\StartLogo</Filter>
+    </ClCompile>
+    <ClCompile Include="ClearScene.cpp">
+      <Filter>03Scene\03GameClearScene\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="ClearLogo.cpp">
+      <Filter>03Scene\03GameClearScene\ClearLogo</Filter>
+    </ClCompile>
+    <ClCompile Include="GameOverScene.cpp">
+      <Filter>03Scene\04GameOverScene\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="OverLogo.cpp">
+      <Filter>03Scene\04GameOverScene\OverLogo</Filter>
+    </ClCompile>
+    <ClCompile Include="PlBullet.cpp">
+      <Filter>03Scene\02MainGameScene\Player\PlayerBullet</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -222,18 +252,6 @@
     <ClInclude Include="PlayScene.h">
       <Filter>03Scene\02MainGameScene\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="PlBullet.h">
-      <Filter>03Scene\02MainGameScene\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="StartScene.h">
-      <Filter>03Scene\01StartScene</Filter>
-    </ClInclude>
-    <ClInclude Include="ClearScene.h">
-      <Filter>03Scene\03GameClearScene</Filter>
-    </ClInclude>
-    <ClInclude Include="GameOverScene.h">
-      <Filter>03Scene\04GameOverScene</Filter>
-    </ClInclude>
     <ClInclude Include="TestScene.h">
       <Filter>03Scene\05TestScene</Filter>
     </ClInclude>
@@ -251,6 +269,27 @@
     </ClInclude>
     <ClInclude Include="HPbarRed.h">
       <Filter>03Scene\02MainGameScene\Enemy\EnemyHPBar</Filter>
+    </ClInclude>
+    <ClInclude Include="StartScene.h">
+      <Filter>03Scene\01StartScene\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="StartLogo.h">
+      <Filter>03Scene\01StartScene\StartLogo</Filter>
+    </ClInclude>
+    <ClInclude Include="ClearScene.h">
+      <Filter>03Scene\03GameClearScene\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="ClearLogo.h">
+      <Filter>03Scene\03GameClearScene\ClearLogo</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOverScene.h">
+      <Filter>03Scene\04GameOverScene\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="OverLogo.h">
+      <Filter>03Scene\04GameOverScene\OverLogo</Filter>
+    </ClInclude>
+    <ClInclude Include="PlBullet.h">
+      <Filter>03Scene\02MainGameScene\Player\PlayerBullet</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

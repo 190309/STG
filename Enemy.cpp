@@ -69,8 +69,9 @@ void Enemy::Update()
 	if (AtcCnt_ == 240)
 	{
 		AtcPtr_ = rand() % 2 + 1;
-		PlX_ = ((Player*)FindObject("Player"))->GetPosX();
-		PlY_ = ((Player*)FindObject("Player"))->GetPosY();
+		pos= ((Player*)FindObject("Player"))->GetPlayerPos();
+		PlX_ = pos.vecX;
+		PlY_ = pos.vecY;
 	}
 
 	//UŒ‚ƒpƒ^[ƒ“‚ð‚à‚Æ‚ÉUŒ‚
@@ -121,8 +122,9 @@ void Enemy::Update()
 	//’e‘å—ÊŽËo
 	if (AtcPtr_ == 2)
 	{
-		PlX_ = ((Player*)FindObject("Player"))->GetPosX();
-		PlY_ = ((Player*)FindObject("Player"))->GetPosY();
+		pos = ((Player*)FindObject("Player"))->GetPlayerPos();
+		PlX_ = pos.vecX;
+		PlY_ = pos.vecY;
 
 		if (AtcCnt_ < 600)
 		{

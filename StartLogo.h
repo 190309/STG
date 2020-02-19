@@ -5,15 +5,18 @@
 //エンジン・その他
 #include "Engine/GameObject.h"
 
-//スタートシーンを管理するクラス
-class StartScene : public GameObject
+//スタートロゴを管理するクラス
+class StartLogo : public GameObject
 {
 private:
+	int hPict_;    //画像番号
 
 public:
 	//コンストラクタ
-	//引数：parent  親オブジェクト（SceneManager）
-	StartScene(GameObject* parent);
+	StartLogo(GameObject* parent);
+
+	//デストラクタ
+	~StartLogo();
 
 	//初期化
 	void Initialize() override;
