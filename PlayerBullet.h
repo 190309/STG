@@ -7,7 +7,7 @@
 #include "Engine/GameObject.h"
 
 //弾を管理するクラス
-class PlBullet : public GameObject
+class PlayerBullet : public GameObject
 {
 private:
 	//ベクトル(定数)
@@ -30,10 +30,10 @@ private:
 
 public:
 	//コンストラクタ
-	PlBullet(GameObject* parent);
+	PlayerBullet(GameObject* parent);
 
 	//デストラクタ
-	~PlBullet();
+	~PlayerBullet();
 
 	//初期化
 	void Initialize() override;

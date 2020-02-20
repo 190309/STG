@@ -77,6 +77,9 @@
     <Filter Include="03Scene\02MainGameScene\Player\PlayerBullet">
       <UniqueIdentifier>{18a81245-7ae8-4df7-b239-d291c79f95cb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03Scene\02MainGameScene\Player\PlayerHP">
+      <UniqueIdentifier>{1724efaf-b763-432d-bef3-e549b3cc498a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine\BoxCollider.cpp">
@@ -181,8 +184,11 @@
     <ClCompile Include="OverLogo.cpp">
       <Filter>03Scene\04GameOverScene\OverLogo</Filter>
     </ClCompile>
-    <ClCompile Include="PlBullet.cpp">
+    <ClCompile Include="PlayerBullet.cpp">
       <Filter>03Scene\02MainGameScene\Player\PlayerBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerHP.cpp">
+      <Filter>03Scene\02MainGameScene\Player\PlayerHP</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -288,8 +294,11 @@
     <ClInclude Include="OverLogo.h">
       <Filter>03Scene\04GameOverScene\OverLogo</Filter>
     </ClInclude>
-    <ClInclude Include="PlBullet.h">
+    <ClInclude Include="PlayerBullet.h">
       <Filter>03Scene\02MainGameScene\Player\PlayerBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerHP.h">
+      <Filter>03Scene\02MainGameScene\Player\PlayerHP</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

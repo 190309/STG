@@ -9,7 +9,7 @@
 #include "EnemyNormalBulletLeft.h"
 #include "EnemyNormalBulletRight.h"
 //‚»‚Ì‘¼
-#include "PlBullet.h"
+#include "PlayerBullet.h"
 #include "Player.h"
 
 //ƒRƒ“ƒXƒgƒ‰ƒNƒ^
@@ -231,7 +231,7 @@ void Enemy::OnCollision(GameObject * pTarget)
 	//’e‚É“–‚½‚Á‚½‚Æ‚«‚Ìˆ—
 	if(pTarget->GetObjectName() == "PlBullet")
 	{
-		HP_ -= ((PlBullet*)pTarget)->GetBulletSize() / 60.00f;
+		HP_ -= ((PlayerBullet*)pTarget)->GetBulletSize() / 60.00f;
 		//“–‚Ä‚½’e‚àŽE‚·
 		pTarget->KillMe();
 	}

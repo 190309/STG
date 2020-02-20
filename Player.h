@@ -44,8 +44,13 @@ public:
 
 	//引数:なし
 	//戻値:transform_.position_
-	//プレイヤーのポジションを返す
+	//自機のポジションを返す
 	XMVECTOR GetPlayerPos() { return transform_.position_; };
+
+	//引数:なし
+	//戻値:HP_
+	//自機のHPを返す
+	int GetHP() { return HP_; };
 
 	//何かに当たった
 	//引数：pTarget 当たった相手

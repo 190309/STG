@@ -129,7 +129,7 @@
     <ClCompile Include="EnemyNormalBulletLeft.cpp" />
     <ClCompile Include="GameOverScene.cpp" />
     <ClCompile Include="OverLogo.cpp" />
-    <ClCompile Include="PlBullet.cpp" />
+    <ClCompile Include="PlayerBullet.cpp" />
     <ClCompile Include="ClearScene.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EnemyNormalBulletRight.cpp" />
@@ -156,6 +156,7 @@
     <ClCompile Include="HPbarGreen.cpp" />
     <ClCompile Include="HPbarRed.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerHP.cpp" />
     <ClCompile Include="PlayScene.cpp" />
     <ClCompile Include="StartLogo.cpp" />
     <ClCompile Include="StartScene.cpp" />
@@ -166,7 +167,7 @@
     <ClInclude Include="EnemyNormalBulletLeft.h" />
     <ClInclude Include="GameOverScene.h" />
     <ClInclude Include="OverLogo.h" />
-    <ClInclude Include="PlBullet.h" />
+    <ClInclude Include="PlayerBullet.h" />
     <ClInclude Include="ClearScene.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyNormalBulletRight.h" />
@@ -193,6 +194,7 @@
     <ClInclude Include="HPbarGreen.h" />
     <ClInclude Include="HPbarRed.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerHP.h" />
     <ClInclude Include="PlayScene.h" />
     <ClInclude Include="StartLogo.h" />
     <ClInclude Include="StartScene.h" />

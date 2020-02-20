@@ -1,7 +1,8 @@
 //親クラス
 #include "Player.h"
 //子クラス
-#include "PlBullet.h"
+#include "PlayerBullet.h"
+#include "PlayerHP.h"
 //相互
 #include "Enemy.h"
 #include "EnemyNormalBulletLeft.h"
@@ -15,7 +16,7 @@
 Player::Player(GameObject * parent)
 	:GameObject(parent, "Player"),
 	RANGE(XMVectorSet(6.0f, 2.75f, 0.0f, 0.0f)),
-	MOVE(0.1f), COLL_SIZE(1.8f),
+	MOVE(0.1f), COLL_SIZE(1.5f),
 	hModel_(-1), HP_(10), BulletFlg_(false)
 {
 }
@@ -35,6 +36,9 @@ void Player::Initialize()
 	//当たり判定生成
 	SphereCollider* collision = new SphereCollider(XMVectorSet(0, 0, 0, 0), COLL_SIZE);
 	AddCollider(collision);
+
+	//HP生成
+	Instantiate<PlayerHP>(this);;
 }
 
 //更新
@@ -44,7 +48,7 @@ void Player::Update()
 	if (Input::IsKey(DIK_Z) && BulletFlg_ == false)
 	{
 		BulletFlg_ = true;
-		PlBullet* pBullet = Instantiate<PlBullet>(GetParent());
+		PlayerBullet* pBullet = Instantiate<PlayerBullet>(GetParent());
 		pBullet->SetPosition(transform_.position_);
 	}
 
@@ -99,6 +103,13 @@ void Player::Update()
 	{
 		SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
 		pSceneManager->ChangeScene(SCENE_ID_GAMEOVER);
+	}
+
+	//自爆コマンド
+	if (Input::IsKeyDown(DIK_E) && HP_ > 0)
+	{
+		//Selt-Explosion
+		HP_--;
 	}
 }
 

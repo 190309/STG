@@ -1,5 +1,6 @@
 //親クラス
-#include "PlBullet.h"
+#include "Player.h"
+#include "PlayerBullet.h"
 //子クラス
 //相互
 //エンジン・その他のクラス
@@ -8,20 +9,20 @@
 #include "Engine/SphereCollider.h"
 
 //コンストラクタ
-PlBullet::PlBullet(GameObject * parent)
-	:GameObject(parent, "PlBullet"),
+PlayerBullet::PlayerBullet(GameObject * parent)
+	:GameObject(parent, "PlayerBullet"),
 	MAX_SIZE(180), AJUST_COLL(60.0f), AJUST_SIZE(120.0f), MAX_RANGE(100.0f), MOVE(0.6f), POS(3.0f),
 	Flg_(false), hModel_(-1), Size_(20), pPlayer_((Player*)FindObject("Player"))
 {
 }
 
 //デストラクタ
-PlBullet::~PlBullet()
+PlayerBullet::~PlayerBullet()
 {
 }
 
 //初期化
-void PlBullet::Initialize()
+void PlayerBullet::Initialize()
 {
 	//モデルデータのロード
 	hModel_ = Model::Load("Bullet.fbx");
@@ -29,7 +30,7 @@ void PlBullet::Initialize()
 }
 
 //更新
-void PlBullet::Update()
+void PlayerBullet::Update()
 {
 	//弾未発射時、Zキーを押している間弾を拡大および移動
 	if (Input::IsKey(DIK_Z) && Flg_ == false)
@@ -69,13 +70,13 @@ void PlBullet::Update()
 }
 
 //描画
-void PlBullet::Draw()
+void PlayerBullet::Draw()
 {
 	Model::SetTransform(hModel_, transform_);
 	Model::Draw(hModel_);
 }
 
 //開放
-void PlBullet::Release()
+void PlayerBullet::Release()
 {
 }
