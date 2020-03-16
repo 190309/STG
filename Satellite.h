@@ -36,4 +36,9 @@ public:
 
 	//ŠJ•ú
 	void Release() override;
+
+	//ˆø”:‚È‚µ
+	//–ß’l:‚È‚µ
+	//¯‚ğ“®‚©‚·ŠÖ”
+	void Move() { transform_.position_.vecZ--; };
 };

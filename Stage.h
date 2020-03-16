@@ -17,6 +17,13 @@ private:
 
 	//変数
 
+	//関数
+
+	//引数:なし
+	//戻値:なし
+	//子供を動かす関数
+	void MoveChild();
+
 public:
 	//コンストラクタ
 	Stage(GameObject* parent);

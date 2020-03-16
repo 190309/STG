@@ -29,7 +29,6 @@ void Satellite::Initialize()
 //çXêV
 void Satellite::Update()
 {
-	transform_.position_.vecZ -= 1.0f;
 	if (transform_.position_.vecZ < 0)
 	{
 		transform_.position_.vecZ = 1000.0f;

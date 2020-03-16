@@ -25,6 +25,14 @@ void Stage::Initialize()
 //更新
 void Stage::Update()
 {
+	//子供を動かす関数
+	MoveChild();
+}
+
+//子供を動かす関数
+void Stage::MoveChild()
+{
+	((Satellite*)FindObject("Satellite"))->Move();
 }
 
 //描画
