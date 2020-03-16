@@ -10,7 +10,7 @@
 PlayerHP::PlayerHP(GameObject * parent)
 	:GameObject(parent, "PlayerHP"),
 	HP_POS(XMVectorSet(-0.87f, -0.95f, 0.0f, 0.0f)),
-	hHPNumberPict_{ -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1 }, hHartPict_(-1), HP_(10)
+	hHPNumberPict_{ -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1 }, HP_(10)
 {
 }
 
@@ -46,10 +46,6 @@ void PlayerHP::Initialize()
 	hHPNumberPict_[10] = Image::Load("10.png");
 	assert(hHPNumberPict_[10] >= 0);
 
-	//ハート画像データのロード
-	hHartPict_ = Image::Load("HP.png");
-	assert(hHartPict_ >= 0);
-
 	//位置変更
 	transform_.position_ = HP_POS;
 }
@@ -67,10 +63,6 @@ void PlayerHP::Draw()
 	//HPの数字画像の描画
 	Image::SetTransform(hHPNumberPict_[HP_], transform_);
 	Image::Draw(hHPNumberPict_[HP_]);
-
-	//ハート画像の描画
-	Image::SetTransform(hHartPict_, transform_);
-	Image::Draw(hHartPict_);
 }
 
 //開放

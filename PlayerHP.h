@@ -18,7 +18,6 @@ private:
 
 	//変数
 	int hHPNumberPict_[11];		//HPの数字画像番号	(-1:エラー / 0:正常読み込み)
-	int hHartPict_;				//ハート画像番号	(-1:エラー / 0:正常読み込み)
 	int HP_;					//自機のHP			(-1 < HP_ < 11)
 
 public:

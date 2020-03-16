@@ -158,6 +158,8 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerHP.cpp" />
     <ClCompile Include="PlayScene.cpp" />
+    <ClCompile Include="Satellite.cpp" />
+    <ClCompile Include="Stage.cpp" />
     <ClCompile Include="StartLogo.cpp" />
     <ClCompile Include="StartScene.cpp" />
     <ClCompile Include="TestScene.cpp" />
@@ -196,6 +198,8 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerHP.h" />
     <ClInclude Include="PlayScene.h" />
+    <ClInclude Include="Satellite.h" />
+    <ClInclude Include="Stage.h" />
     <ClInclude Include="StartLogo.h" />
     <ClInclude Include="StartScene.h" />
     <ClInclude Include="TestScene.h" />

@@ -80,6 +80,18 @@
     <Filter Include="03Scene\02MainGameScene\Player\PlayerHP">
       <UniqueIdentifier>{1724efaf-b763-432d-bef3-e549b3cc498a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03Scene\02MainGameScene\Player\Player">
+      <UniqueIdentifier>{f89aa9b1-53d8-4249-8511-bb2ff9cf9ef7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03Scene\02MainGameScene\Stage">
+      <UniqueIdentifier>{52a40685-a85d-43a9-b0da-b182621f4aea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03Scene\02MainGameScene\Stage\Satellite">
+      <UniqueIdentifier>{9b04fcc0-a634-4d45-8074-bac219678220}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03Scene\02MainGameScene\Stage\Stage">
+      <UniqueIdentifier>{6364718f-48c6-4fdf-b9b0-f44b10a89805}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine\BoxCollider.cpp">
@@ -142,9 +154,6 @@
     <ClCompile Include="Engine\Transform.cpp">
       <Filter>01Engine\GameObject</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>03Scene\02MainGameScene\Player</Filter>
-    </ClCompile>
     <ClCompile Include="PlayScene.cpp">
       <Filter>03Scene\02MainGameScene\Scene</Filter>
     </ClCompile>
@@ -189,6 +198,15 @@
     </ClCompile>
     <ClCompile Include="PlayerHP.cpp">
       <Filter>03Scene\02MainGameScene\Player\PlayerHP</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>03Scene\02MainGameScene\Player\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage.cpp">
+      <Filter>03Scene\02MainGameScene\Stage\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="Satellite.cpp">
+      <Filter>03Scene\02MainGameScene\Stage\Satellite</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -252,9 +270,6 @@
     <ClInclude Include="Engine\Transform.h">
       <Filter>01Engine\GameObject</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>03Scene\02MainGameScene\Player</Filter>
-    </ClInclude>
     <ClInclude Include="PlayScene.h">
       <Filter>03Scene\02MainGameScene\Scene</Filter>
     </ClInclude>
@@ -299,6 +314,15 @@
     </ClInclude>
     <ClInclude Include="PlayerHP.h">
       <Filter>03Scene\02MainGameScene\Player\PlayerHP</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>03Scene\02MainGameScene\Player\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage.h">
+      <Filter>03Scene\02MainGameScene\Stage\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Satellite.h">
+      <Filter>03Scene\02MainGameScene\Stage\Satellite</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

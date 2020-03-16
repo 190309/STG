@@ -3,6 +3,7 @@
 //子クラス
 #include "Player.h"
 #include "Enemy.h"
+#include "Stage.h"
 //相互
 //エンジン・その他
 
@@ -16,7 +17,8 @@ PlayScene::PlayScene(GameObject * parent)
 void PlayScene::Initialize()
 {
 	Instantiate<Player>(this);
-//	Instantiate<Enemy>(this);
+	Instantiate<Enemy>(this);
+	Instantiate<Stage>(this);
 }
 
 //更新

@@ -15,9 +15,10 @@
 //コンストラクタ
 Player::Player(GameObject * parent)
 	:GameObject(parent, "Player"),
-	RANGE(XMVectorSet(6.0f, 2.75f, 0.0f, 0.0f)),
-	MOVE(0.1f), COLL_SIZE(1.5f),
-	hModel_(-1), HP_(10), BulletFlg_(false)
+	RANGE(XMVectorSet(6.0f, 2.75f, 0.0f, 0.0f)), SIZE(XMVectorSet(1.0f, 1.0f, 1.0f, 0)),
+	MOVE(0.1f), COLL_SIZE(1.5f), DMG_CNT_MAX(30),
+	BulletFlg_(false), DamageFlg_(false),
+	DmgCnt_(DMG_CNT_MAX), hModel_(-1), HP_(10)
 {
 }
 
@@ -44,6 +45,26 @@ void Player::Initialize()
 //更新
 void Player::Update()
 {
+	//弾の生成および発射
+	Bullet();
+
+	//機体を移動させる関数
+	Move();
+
+	//攻撃を受けた関数
+	GetAttack();
+
+	//自爆コマンド
+	if (Input::IsKeyDown(DIK_E) && HP_ > 0)
+	{
+		//Selt-Explosion
+		HP_--;
+	}
+}
+
+//弾の生成および発射
+void Player::Bullet()
+{
 	//弾未生成時、Zキーを押したら弾生成
 	if (Input::IsKey(DIK_Z) && BulletFlg_ == false)
 	{
@@ -57,7 +78,11 @@ void Player::Update()
 	{
 		BulletFlg_ = false;
 	}
+}
 
+//機体を移動させる関数
+void Player::Move()
+{
 	//上キー入力で上へ移動
 	if (Input::IsKey(DIK_UP))
 	{
@@ -79,7 +104,7 @@ void Player::Update()
 	}
 
 	//右キー入力で右へ移動
-	if(Input::IsKey(DIK_RIGHT))
+	if (Input::IsKey(DIK_RIGHT))
 	{
 		//移動可能
 		if (transform_.position_.vecX < RANGE.vecX)
@@ -97,19 +122,30 @@ void Player::Update()
 			transform_.position_.vecX -= MOVE;
 		}
 	}
+}
+
+//攻撃を受けた関数
+void Player::GetAttack()
+{
+	//無敵時間
+	if (DamageFlg_ == true)
+	{
+		transform_.scale_ = XMVectorSet(0, 0, 0, 0);
+
+		//無敵時間終了
+		if (DmgCnt_-- < 0)
+		{
+			transform_.scale_ = SIZE;
+			DmgCnt_ = DMG_CNT_MAX;
+			DamageFlg_ = false;
+		}
+	}
 
 	//HPがない
 	if (HP_ < 1)
 	{
 		SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
 		pSceneManager->ChangeScene(SCENE_ID_GAMEOVER);
-	}
-
-	//自爆コマンド
-	if (Input::IsKeyDown(DIK_E) && HP_ > 0)
-	{
-		//Selt-Explosion
-		HP_--;
 	}
 }
 
@@ -128,17 +164,23 @@ void Player::Release()
 //何かに当たった
 void Player::OnCollision(GameObject * pTarget)
 {
-	//弾に当たったときの処理
-	if (pTarget->GetObjectName() == "EnemyNormalBulletLeft" || pTarget->GetObjectName() == "EnemyNormalBulletRight")
+	//現在攻撃を受けていない場合
+	if (DamageFlg_ == false)
 	{
-		HP_--;
-		//当たった弾を殺す
-		pTarget->KillMe();
-	}
+		//弾に当たったときの処理
+		if (pTarget->GetObjectName() == "EnemyNormalBulletLeft" || pTarget->GetObjectName() == "EnemyNormalBulletRight")
+		{
+			DamageFlg_ = true;
+			HP_--;
+			//当たった弾を殺す
+			pTarget->KillMe();
+		}
 
-	//Enemyに当たったときの処理
-	if (pTarget->GetObjectName() == "Enemy")
-	{
-		HP_--;
+		//Enemyに当たったときの処理
+		if (pTarget->GetObjectName() == "Enemy")
+		{
+			DamageFlg_ = true;
+			HP_--;
+		}
 	}
 }

@@ -52,7 +52,7 @@ void PlayerBullet::Update()
 	{
 		Flg_ = true;
 		//ìñÇΩÇËîªíËê∂ê¨
-		SphereCollider* collision = new SphereCollider(XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f), Size_ / AJUST_COLL);
+		SphereCollider* collision = new SphereCollider(XMVectorSet(0, 0, 0, 0), Size_ / AJUST_COLL);
 		AddCollider(collision);
 	}
 
